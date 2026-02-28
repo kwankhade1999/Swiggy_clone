@@ -53,7 +53,8 @@ phases:
 
 post_build:
   commands:
-    - aws ses send-email \
+  - |
+      aws ses send-email \
         --from "madithati123@gmail.com" \
         --to "madithati123@gmail.com" \
         --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" \
