@@ -50,12 +50,13 @@ phases:
       - echo "Running SonarQube analysis result"
       - sonar-scanner -Dsonar.projectKey=swiggy -Dsonar.sources=. -Dsonar.host.url=http://51.20.5.253:9000/
       - |
-          aws ses send-email \
-            --from "madithati123@gmail.com" \
-            --to "madithatisreedhar123@gmail.com" \
-            --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" \
-            --text "Build status: $CODEBUILD_BUILD_STATUS" \
-            --region "eu-north-1"
+        aws ses send-email \
+         --from "madithati123@gmail.com" \
+         --to "madithatisreedhar123@gmail.com" \
+         --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" \
+         --text "Build status: $CODEBUILD_BUILD_STATUS" \
+         --region "eu-north-1"
+
 artifacts:
   files:
 
